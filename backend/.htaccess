@@ -1,0 +1,14 @@
+#force www - https
+
+<IfModule mod_rewrite.c>
+   
+    RewriteEngine On
+
+    # allow auth
+    SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
+
+    # pages
+    RewriteRule ^api?$ /index.php [NC,L]
+
+
+</IfModule>
