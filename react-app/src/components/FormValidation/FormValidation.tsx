@@ -61,11 +61,11 @@ export const validateInput = (inputField: IInput, formFields: IForm['inputs']) =
 	inputClean = inputClean.trim();
 	inputClean = inputClean.replace(/  +/g, ' ');
 
-	const isEmpty = inputClean.length > 0;
+	const isEmpty = inputClean.length === 0;
 
 	if (isRequired) {
 		// isEmpty
-		if (!isEmpty) {
+		if (isEmpty) {
 			errorMessage = 'Input required';
 			hasPassed = false;
 		}
